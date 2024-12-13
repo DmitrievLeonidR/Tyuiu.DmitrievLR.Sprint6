@@ -31,7 +31,7 @@ namespace Tyuiu.DmitrievLR.Sprint6.Task6.V17.Lib
                 Console.WriteLine("Error: " + ex.Message);
             }
 
-            result = result.Substring(0, result.Length - 1);
+            result = result.Substring(0, result.Length - 2);
 
 
             return result;
