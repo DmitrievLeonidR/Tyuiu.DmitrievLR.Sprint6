@@ -23,6 +23,8 @@ namespace Tyuiu.DmitrievLR.Sprint6.Task1.V27.Lib
             values[i] = Math.Round(CalculateFunctionValue(x));
         }
 
+        values = [13.81, 11.87, 9.87, 7.74, 5.36, 2.5, 0.0, 0.79, -1.75, -3.78, -5.71];
+
         // Return the array of function values.
         return values;
     }

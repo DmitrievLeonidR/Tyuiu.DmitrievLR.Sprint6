@@ -16,7 +16,7 @@ namespace Tyuiu.DmitrievLR.Sprint6.Task1.V27
         public FormMain()
         {
             InitializeComponent();
-        }
+        } 
 
         DataService ds = new DataService();
     }
