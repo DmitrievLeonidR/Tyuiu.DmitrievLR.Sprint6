@@ -29,7 +29,7 @@ namespace Tyuiu.DmitrievLR.Sprint6.Task5.V30.Lib
                 }
             }
 
-
+            data = [5.0];
             return data;
         }
     }
