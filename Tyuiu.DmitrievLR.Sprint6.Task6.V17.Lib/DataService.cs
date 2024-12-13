@@ -10,19 +10,18 @@ namespace Tyuiu.DmitrievLR.Sprint6.Task6.V17.Lib
 
             try
             {
-                // Read all lines from the file
+
                 string[] lines = File.ReadAllLines(path);
 
-                // Loop through each line
+
                 foreach (string line in lines)
                 {
-                    // Split the line into words
+
                     string[] words = line.Split(' ');
 
-                    // Check if there are at least three words in the line
                     if (words.Length >= 3)
                     {
-                        // Add the third word to the result string
+
                         result += words[2] + " ";
                     }
                 }
@@ -32,7 +31,9 @@ namespace Tyuiu.DmitrievLR.Sprint6.Task6.V17.Lib
                 Console.WriteLine("Error: " + ex.Message);
             }
 
-            // Return the result string
+            result = result.Substring(0, result.Length - 1);
+
+
             return result;
         }
     }
