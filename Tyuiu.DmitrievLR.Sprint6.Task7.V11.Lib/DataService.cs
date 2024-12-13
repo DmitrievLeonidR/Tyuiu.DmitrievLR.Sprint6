@@ -6,27 +6,30 @@ namespace Tyuiu.DmitrievLR.Sprint6.Task7.V11.Lib
     {
         public int[,] GetMatrix(string path)
         {
-            // Read the file contents.
-            string[] lines = File.ReadAllLines(path);
+            string[] fileData = File.ReadAllText(path).Replace('\n', '\r').Split('\r', StringSplitOptions.RemoveEmptyEntries);
 
-            // Determine the dimensions of the matrix.
-            int rows = lines.Length;
-            int columns = lines[0].Split(';').Length;
+            int rows = fileData.Length;
+            int columns = fileData[0].Split(';').Length;
 
-            // Create the matrix.
             int[,] matrix = new int[rows, columns];
 
-            // Populate the matrix with data from the file.
             for (int i = 0; i < rows; i++)
             {
-                string[] values = lines[i].Split(';');
+                string[] line = fileData[i].Split(";");
                 for (int j = 0; j < columns; j++)
                 {
-                    matrix[i, j] = int.Parse(values[j]);
+                    matrix[i, j] = Convert.ToInt32(line[j]);
                 }
             }
 
-            // Return the matrix.
+            int xRow = 4; // 5-я строка (индекс 4)
+            for (int j = 0; j < columns; j++)
+            {
+                if (matrix[xRow, j] < 0)
+                {
+                    matrix[xRow, j] = 9;
+                }
+            }
             return matrix;
         }
     }
