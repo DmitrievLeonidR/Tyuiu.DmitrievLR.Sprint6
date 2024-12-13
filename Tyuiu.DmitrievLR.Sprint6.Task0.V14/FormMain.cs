@@ -34,7 +34,7 @@ namespace Tyuiu.DmitrievLR.Sprint6.Task0.V14
             }
             catch
             {
-                MessageBox.Show("Введены некорректные данные");   
+                MessageBox.Show("Введены некорректные данные");    
             }
         }
     }

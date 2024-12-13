@@ -9,7 +9,7 @@ namespace Tyuiu.DmitrievLR.Sprint6.Task0.V14.Lib
 
             double y = (Math.Pow( (1-x) ,2)) / (-3*x);
 
-            return y;
+            return Math.Round(y, 3);
         }
     }
 }
