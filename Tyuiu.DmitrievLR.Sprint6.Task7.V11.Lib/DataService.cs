@@ -6,26 +6,35 @@ namespace Tyuiu.DmitrievLR.Sprint6.Task7.V11.Lib
     {
         public int[,] GetMatrix(string path)
         {
-            string[] lines = File.ReadAllLines(path);
+            // Read the file lines.
+            List<string> lines = new List<string>();
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    lines.Add(line);
+                }
+            }
 
-            // Get the dimensions of the matrix
-            int rows = lines.Length;
+            // Determine the dimensions of the matrix.
+            int rows = lines.Count;
             int cols = lines[0].Split(',').Length;
 
-            // Create a 2D array to store the matrix
+            // Create the matrix.
             int[,] matrix = new int[rows, cols];
 
-            // Parse the CSV data into the matrix
+            // Populate the matrix.
             for (int i = 0; i < rows; i++)
             {
                 string[] values = lines[i].Split(',');
                 for (int j = 0; j < cols; j++)
                 {
-                    matrix[i, j] = int.Parse(values[j]);
+                    matrix[i, j] = Convert.ToInt32(values[j]);
                 }
             }
 
-            // Return the matrix
+            // Return the matrix.
             return matrix;
         }
     }
