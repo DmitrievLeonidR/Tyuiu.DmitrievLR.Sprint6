@@ -18,6 +18,6 @@ namespace Tyuiu.DmitrievLR.Sprint6.Task7.V11
             InitializeComponent(); 
         } 
 
-        DataService ds = new DataService();
+        DataService ds = new DataService(); 
     }
 }
